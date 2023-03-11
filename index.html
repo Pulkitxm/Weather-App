@@ -2,140 +2,138 @@
 <html lang="en">
 
 <head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
-  <link rel="stylesheet" href="style.css" />
-  <title>Weather App - Pulkit</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Weather App - Pulkit</title>
+    <link rel="icon" href="Pulkit.jpg">
 </head>
 
 <body>
-  <script>document.onkeydown = function (e) {
-      if (e.ctrlKey && (e.keyCode === 67 || e.keyCode === 86 || e.keyCode === 85 || e.keyCode === 117)) {//Alt+c, Alt+v will also be disabled sadly.
-        alert('not allowed');
-      }
-      return false;
-    };
-    document.onkeydown = function (e) {
-      if (e.ctrlKey && (e.keyCode === 67 || e.keyCode === 86 || e.keyCode === 85 || e.keyCode === 117)) {//Alt+c, Alt+v will also be disabled sadly.
-        return false;
-      }
-      return false;
-    };
-    document.addEventListener('contextmenu', event => event.preventDefault());
-    document.addEventListener("keydown", function (event) {
-      if (event.ctrlKey) {
-        event.preventDefault();
-      }
-    });
-  </script>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Waather App</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">About this app <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            Cities
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" target="iframe" href="Cities/Mumbai/index.html">Mumbai</a>
-            <a class="dropdown-item" target="iframe" href="Cities/Delhi/index.html">Delhi</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#">Disabled</a>
-        </li>
-      </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" id="city" aria-label="Search" />
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="submit">
-          Search
+    <script>document.onkeydown = function (e) {
+            if (e.ctrlKey && (e.keyCode === 67 || e.keyCode === 86 || e.keyCode === 85 || e.keyCode === 117)) {//Alt+c, Alt+v will also be disabled sadly.
+                alert('not allowed');
+            }
+            return false;
+        };
+        document.onkeydown = function (e) {
+            if (e.ctrlKey && (e.keyCode === 67 || e.keyCode === 86 || e.keyCode === 85 || e.keyCode === 117)) {//Alt+c, Alt+v will also be disabled sadly.
+                return false;
+            }
+            return false;
+        };
+        document.addEventListener('contextmenu', event => event.preventDefault());
+        document.addEventListener("keydown", function (event) {
+            if (event.ctrlKey) {
+                event.preventDefault();
+            }
+        });
+    </script>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Waather App</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
         </button>
-      </form>
-    </div>
-  </nav>
-  <div class="container">
-    <h1 class="my-4 text-center">Weather for <span id="cityName"></span></h1>
-    <div class="card-deck mb-3 text-center">
-      <div class="card mb-4 box-shadow">
-        <div class="card-header">
-          <h4 class="my-0 font-weight-normal">Tempreatures</h4>
-        </div>
-        <div class="card-body">
-          <h1 class="card-title pricing-card-title"> <span id="temp1"></span><small class="text-muted">°C</small></h1>
-          <ul class="list-unstyled mt-3 mb-4">
-            <li>Temp -> <span id="temp"></span></li>
-            <li>Min temp -> <span id="min_temp"></span></li>
-            <li>Max temp -> <span id="max_temp"></span></li>
-          </ul>
-          <!-- <button type="button" class="btn btn-lg btn-block btn-outline-primary">Sign up for free</button> -->
-        </div>
-      </div>
-      <div class="card mb-4 box-shadow">
-        <div class="card-header">
-          <h4 class="my-0 font-weight-normal">Humidity</h4>
-        </div>
-        <div class="card-body">
-          <h1 class="card-title pricing-card-title"><span id="humidity1"></span> <small class="text-muted"> G.m
-              -3</small></h1>
-          <ul class="list-unstyled mt-3 mb-4">
-            <li>Cloud pct -> <span id="cloud_pct"></span></li>
-            <li>Feels_like -> <span id="feels_like"></span></li>
-            <li>Humidity -> <span id="humidity"></span></li>
-          </ul>
-          <!-- <button type="button" class="btn btn-lg btn-block btn-primary">Get started</button> -->
-        </div>
-      </div>
-      <div class="card mb-4 box-shadow">
-        <div class="card-header">
-          <h4 class="my-0 font-weight-normal">Sun and Wind Info</h4>
-        </div>
-        <div class="card-body">
-          <h1 class="card-title pricing-card-title"><span id="wind_speed1"></span> <small class="text-muted">km /
-              h</small></h1>
-          <ul class="list-unstyled mt-3 mb-4">
-            <li>Sunrise -> <span id="sunrise"></span></li>
-            <li>Sunset -> <span id="sunset"></span></li>
-            <li>Wind_degrees -> <span id="wind_degrees"></span></li>
-            <li>Wind_speed -> <span id="wind_speed"></span></li>
-          </ul>
-          <!-- <button type="button" class="btn btn-lg btn-block btn-primary">Contact us</button> -->
-        </div>
-      </div>
-    </div>
 
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">About this app <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Cities
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" target="iframe" href="Cities/Mumbai/index.html">Mumbai</a>
+                        <a class="dropdown-item" target="iframe" href="Cities/Delhi/index.html">Delhi</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Disabled</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" id="city" aria-label="Search" />
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="submit">
+                    Search
+                </button>
+            </form>
+        </div>
+    </nav>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-      crossorigin="anonymous"></script>
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-      crossorigin="anonymous"></script>
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-      crossorigin="anonymous"></script>
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
     <script src="script.js"></script>
 
 
+    <embed id="iframe" name="iframe" src="Cities/Delhi/index.html"></embed>
+    <h1 id="click">
+        Click on cities to view Weather
+    </h1>
+    <div class="links">
+        <a draggable=false href="Cities/Agra/index.html" target="iframe">Agra</a>
+        <a draggable=false href="Cities/Ahemdabad/index.html" target="iframe">Ahemdabad</a>
+        <a draggable=false href="Cities/Aligarh/index.html" target="iframe">Aligarh</a>
+        <a draggable=false href="Cities/Banglore/index.html" target="iframe">Banglore</a>
+        <a draggable=false href="Cities/Banjar/index.html" target="iframe">Banjar</a>
+        <a draggable=false href="Cities/Bhopal/index.html" target="iframe">Bhopal</a>
+        <!-- <a draggable=false href="Cities/Bhota/index.html" target="iframe">Bhota</a> -->
+        <a draggable=false href="Cities/Bhubaneswar/index.html" target="iframe">Bhubaneswar</a>
+        <a draggable=false href="Cities/Chaupal/index.html" target="iframe">Chaupal</a>
+        <a draggable=false href="Cities/Chennai/index.html" target="iframe">Chennai</a>
+        <a draggable=false href="Cities/Delhi/index.html" target="iframe">Delhi</a>
+        <a draggable=false href="Cities/Faridabad/index.html" target="iframe">Faridabad</a>
+        <a draggable=false href="Cities/Ghaziabad/index.html" target="iframe">Ghaziabad</a>
+        <a draggable=false href="Cities/Gurgaon/index.html" target="iframe">Gurgaon</a>
+        <a draggable=false href="Cities/Hyderabad/index.html" target="iframe">Hyderabad</a>
+        <a draggable=false href="Cities/Indore/index.html" target="iframe">Indore</a>
+        <a draggable=false href="Cities/Jaipur/index.html" target="iframe">Jaipur</a>
+        <a draggable=false href="Cities/Jalandhar/index.html" target="iframe">Jalandhar</a>
+        <a draggable=false href="Cities/Jubbal/index.html" target="iframe">Jubbal</a>
+        <a draggable=false href="Cities/Jutogh/index.html" target="iframe">Jutogh</a>
+        <a draggable=false href="Cities/Kanpur/index.html" target="iframe">Kanpur</a>
+        <a draggable=false href="Cities/Kolkata/index.html" target="iframe">Kolkata</a>
+        <a draggable=false href="Cities/Kotkhai/index.html" target="iframe">Kotkhai</a>
+        <a draggable=false href="Cities/Lucknow/index.html" target="iframe">Lucknow</a>
+        <a draggable=false href="Cities/Ludhiana/index.html" target="iframe">Ludhiana</a>
+        <a draggable=false href="Cities/Moradabad/index.html" target="iframe">Moradabad</a>
+        <a draggable=false href="Cities/Mumbai/index.html" target="iframe">Mumbai</a>
+        <a draggable=false href="Cities/Nagpur/index.html" target="iframe">Nagpur</a>
+        <a draggable=false href="Cities/Naina Devi/index.html" target="iframe">Naina Devi</a>
+        <!-- <a draggable=false href="Cities/Narkhanda/index.html" target="iframe">Narkhanda</a> -->
+        <a draggable=false href="Cities/Nashik/index.html" target="iframe">Nashik</a>
+        <a draggable=false href="Cities/Patna/index.html" target="iframe">Patna</a>
+        <a draggable=false href="Cities/Pune/index.html" target="iframe">Pune</a>
+        <a draggable=false href="Cities/Rewalsar/index.html" target="iframe">Rewalsar</a>
+        <a draggable=false href="Cities/Sonipat/index.html" target="iframe">Sonipat</a>
+        <a draggable=false href="Cities/Surat/index.html" target="iframe">Surat</a>
+        <a draggable=false href="Cities/Talai/index.html" target="iframe">Talai</a>
+        <a draggable=false href="Cities/Thane/index.html" target="iframe">Thane</a>
+        <a draggable=false href="Cities/Vadodara/index.html" target="iframe">Vadodara</a>
+        <a draggable=false href="Cities/Vishakhapatnam/index.html" target="iframe">Vishakhapatnam</a>
+
+    </div>
 
 </body>
 

@@ -1,0 +1,33 @@
+embed{
+    display: block;
+    margin-top: 1em;
+    margin-right: auto;
+    margin-left: auto;
+    height: 60vh;
+    width: 80vw;
+}
+.links{
+    /* font-size: 1.5em; */
+    /* display: inline;
+    justify-content: space-evenly; */
+    /* text-align: center; */
+    justify-content: space-evenly;
+    display: flex;
+    flex-wrap: wrap;
+}
+#click{
+    text-align: center;
+    cursor: text;
+    /* font-size: 7em; */
+}
+.links a{
+    display: block;
+    padding: 10px;
+    color: blue;
+}
+*{
+    -webkit-user-select: none;  
+    -moz-user-select: none;    
+    -ms-user-select: none;      
+    user-select: none;
+  }
