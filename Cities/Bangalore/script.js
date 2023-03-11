@@ -32,7 +32,7 @@ const getWeather = (city) => {
 }
 
 
-getWeather("Banglore")
+getWeather("Bangalore")
 
 
 document.onkeydown = function (e) {
